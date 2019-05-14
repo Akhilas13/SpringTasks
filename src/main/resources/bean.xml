@@ -4,21 +4,7 @@
        xsi:schemaLocation=" http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="MovieA" class="com.stackroute.spring.bean.Movie">
-        <constructor-arg name="actor1" ref="actor1"/>
-        <constructor-arg name="actor2" ref="actor2"/>
-        <constructor-arg name="actor3" ref="actor3"/>
-
-    </bean>
-
-    <bean id="MovieB" class="com.stackroute.spring.bean.Movie" >
-        <constructor-arg name="actor1" ref="actor1"/>
-        <constructor-arg name="actor2" ref="actor2"/>
-        <constructor-arg name="actor3" ref="actor3"/>
-
-    </bean>
-
-
+    <bean id="Movie" class="com.stackroute.spring.bean.Movie" autowire="byName"></bean>
     <bean id="actor1" class="com.stackroute.spring.bean.Actor">
         <constructor-arg name="name" value="Hrithik roshan"/>
         <constructor-arg name="gender" value="male"/>
@@ -34,6 +20,7 @@
         <constructor-arg name="gender" value="female"/>
         <constructor-arg name="age" value="30"/>
     </bean>
+
 
 
 </beans>

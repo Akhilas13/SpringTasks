@@ -1,10 +1,10 @@
 package com.stackroute.spring.bean;
 
 public class Actor {
+
     private String name;
     private String gender;
     private int age;
-
 
 
     public Actor(String name, String gender, int age) {
@@ -51,3 +51,4 @@ public class Actor {
                 '}';
     }
 }
+
