@@ -1,6 +1,10 @@
 package com.stackroute.spring.bean;
 
-public class Movie {
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Movie implements ApplicationContextAware {
     Actor actor1;
     Actor actor2;
     Actor actor3;
@@ -49,6 +53,11 @@ public class Movie {
                 '}';
     }
 
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println(applicationContext);
+
+
+    }
 }
 
 
