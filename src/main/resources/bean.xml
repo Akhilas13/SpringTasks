@@ -4,14 +4,36 @@
        xsi:schemaLocation=" http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-   <bean id="Movies" class="com.stackroute.spring.bean.Movie" scope="prototype">
-       <property name="actor" ref="actor"/>
+    <bean id="MovieA" class="com.stackroute.spring.bean.Movie">
+        <constructor-arg name="actor1" ref="actor1"/>
+        <constructor-arg name="actor2" ref="actor2"/>
+        <constructor-arg name="actor3" ref="actor3"/>
 
-   </bean>
-    <bean id="actor" class="com.stackroute.spring.bean.Actor" scope="prototype">
-       <property name="name" value="vishal"/>
-       <property name="gender" value="male"/>
-        <property name="age" value="30"/>
     </bean>
+
+    <bean id="MovieB" class="com.stackroute.spring.bean.Movie" >
+        <constructor-arg name="actor1" ref="actor1"/>
+        <constructor-arg name="actor2" ref="actor2"/>
+        <constructor-arg name="actor3" ref="actor3"/>
+
+    </bean>
+
+
+    <bean id="actor1" class="com.stackroute.spring.bean.Actor">
+        <constructor-arg name="name" value="Hrithik roshan"/>
+        <constructor-arg name="gender" value="male"/>
+        <constructor-arg name="age" value="40"/>
+    </bean>
+    <bean id="actor2" class="com.stackroute.spring.bean.Actor">
+        <constructor-arg name="name" value="Sharuk khan"/>
+        <constructor-arg name="gender" value="male"/>
+        <constructor-arg name="age" value="50"/>
+    </bean>
+    <bean id="actor3" class="com.stackroute.spring.bean.Actor">
+        <constructor-arg name="name" value="Deepika padukone"/>
+        <constructor-arg name="gender" value="female"/>
+        <constructor-arg name="age" value="30"/>
+    </bean>
+
 
 </beans>
