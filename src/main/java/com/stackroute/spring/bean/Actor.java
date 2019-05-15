@@ -1,11 +1,15 @@
 package com.stackroute.spring.bean;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
 
-public class Actor {
-
+public class Actor implements BeanNameAware, BeanFactoryAware {
     private String name;
     private String gender;
     private int age;
 
+    public Actor(){}
 
     public Actor(String name, String gender, int age) {
         this.name = name;
@@ -13,16 +17,11 @@ public class Actor {
         this.age = age;
     }
 
-    public Actor() {
-    }
-
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-
         this.name = name;
     }
 
@@ -42,6 +41,7 @@ public class Actor {
         this.age = age;
     }
 
+
     @Override
     public String toString() {
         return "Actor{" +
@@ -50,5 +50,12 @@ public class Actor {
                 ", age=" + age +
                 '}';
     }
-}
 
+    public void setBeanName(String s) {
+        System.out.println("BeanNameAware  "+s);
+    }
+
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("In beanfactoryaware "+beanFactory);
+    }
+}
